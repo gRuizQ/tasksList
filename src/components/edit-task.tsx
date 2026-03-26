@@ -5,7 +5,7 @@ import { Button } from "./ui/button"
 import { Tasks } from "@/src/generated/prisma/client";
 import { useState } from "react";
 import { toast } from "sonner";
-import { updateTask } from "@/src/actions/edit-task";
+import { updateTask } from "@/src/lib/actions/edit-task";
 import { DialogClose } from "./ui/dialog";
 
 type EditTaskProps = {

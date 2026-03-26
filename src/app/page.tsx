@@ -1,21 +1,24 @@
 "use client"
+import { useState, useEffect } from "react";
+import { toast } from "sonner";
+import { Plus, ListCheck, Sigma, LoaderCircle } from 'lucide-react';
+import { Tasks } from "@/src/generated/prisma/client";
+
 import { Button } from "@/src/components/ui/button";
 import { Input } from "@/src/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/src/components/ui/card";
 import { Separator } from "@/src/components/ui/separator";
-import { Plus, ListCheck, Sigma, LoaderCircle } from 'lucide-react';
-import EditTask from "@/src/components/edit-task"
+
+import EditTask from "@/src/components/edit-task";
 import ClearTask from "@/src/components/clear-task";
 import DeleteTask from "@/src/components/delete-task";
-import { getTasks } from "@/src/actions/get-tasks-from-bd";
-import { useState, useEffect } from "react";
-import { Tasks } from "@/src/generated/prisma/client";
-import { NewTask } from "@/src/actions/add-task";
-import { deleteTask } from "@/src/actions/delete-task";
-import { toast } from "sonner";
-import { updateTaskDone } from "@/src/actions/toggle-done";
 import Filter, { FilterType } from "@/src/components/filter";
-import { ClearCompletedTask } from "@/src/actions/clear-completed-tasks";
+
+import { getTasks } from "@/src/lib/actions/get-tasks-from-bd";
+import { NewTask } from "@/src/lib/actions/add-task";
+import { deleteTask } from "@/src/lib/actions/delete-task";
+import { updateTaskDone } from "@/src/lib/actions/toggle-done";
+import { ClearCompletedTask } from "@/src/lib/actions/clear-completed-tasks";
 
 
 const Home = () => {

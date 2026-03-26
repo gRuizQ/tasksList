@@ -1,6 +1,6 @@
 "use server";
 
-import { prisma } from "@/src/utils/prisma";
+import { prisma } from "@/src/lib/utils/prisma";
 
 export const updateTask = async (id: string, task: string) => {
     try {
